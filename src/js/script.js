@@ -28,7 +28,7 @@ function render(){
                                                      <h5>Author: ${book.author} </h5>
                                                      <h5>Number of pages: ${book.numPages} </h5>
                                                      <h5>Current state: ${book.read} </h5>
-                                                     <button onClick=removeBook(${index})>Delete</button>
+                                                     <button onClick=removeBook(${index}) class="delete-book-btn">Delete</button>
                                                  </div>
                                                 </div>`;}); 
   document.getElementById("library").innerHTML = bookList;

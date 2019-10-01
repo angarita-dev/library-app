@@ -1,3 +1,8 @@
+button {
+    border: 1px solid rgb(90,90,90);
+    padding: 0 5px;
+}
+
 table {
     text-align: center;
     margin: 50px auto;
@@ -46,4 +51,24 @@ body{
 .bookInfo{
     border-bottom: 1px solid black;
     padding-bottom: 10px;
+}
+
+.delete-book-btn {
+    width: 30%;
+    border-radius: 10%;
+    margin: 5px auto;
+    box-shadow: none;
+    border: 1px solid gray;
+}
+
+.delete-book-btn:hover {
+    font-weight: 700;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 20%;
+    margin: 20px auto;
 }

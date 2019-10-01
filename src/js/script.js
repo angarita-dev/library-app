@@ -15,9 +15,8 @@ function addBookToLibrary() {
 
   let newBook = new Book(title, author, numPages, read);
   myLibrary.push(newBook);
-  displayAllBooks(newBook);
-  alert(newBook.title + " was added successfully !!!");
   render();
+  alert(newBook.title + " was added successfully !!!");
   document.getElementsByClassName("input")[0].style.display = "none";
 }
 
@@ -27,12 +26,13 @@ function render(){
                                                  <div class='book'>
                                                      <h2>Title: ${book.title} </h2>
                                                      <h5>Author: ${book.author} </h5>
-                                                     <h5>Year Published: ${book.numPages} </h5>
+                                                     <h5>Number of pages: ${book.numPages} </h5>
+                                                     <h5>Current state: ${book.read} </h5>
                                                  </div>
                                                 </div>`;}); 
   document.getElementById("library").innerHTML = bookList;
 }
 
 function newBook(){
-document.getElementsByClassName("input")[0].style.display = "block";
+  document.getElementsByClassName("input")[0].style.display = "block";
 }

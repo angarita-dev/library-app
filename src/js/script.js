@@ -9,7 +9,11 @@ function Book(title, author, numPages, read) {
 
 function addBookToLibrary() {
   let title = document.querySelector("#title").value;
-  let author = document.querySelector("#title").value;
-  let newBook = new Book(title, author, numPages, read)
+  let author = document.querySelector("#author").value;
+  let numPages = document.querySelector("#numPages").value;
+  let read = document.querySelector("#read").value;
+
+  let newBook = new Book(title, author, numPages, read);
   myLibrary.push(newBook);
+  alert(newBook.title + " was added successfully !!!");
 }

@@ -15,17 +15,28 @@ function addBookToLibrary() {
 
   let newBook = new Book(title, author, numPages, read);
   myLibrary.push(newBook);
+  displayAllBooks(newBook);
   alert(newBook.title + " was added successfully !!!");
-
 }
 
-let render = () => {
-  var bookList = ``;
-  myLibrary.forEach((book) => { bookList +=`<tr class='book'>
-                                                     <td>${book.title} </td>
-                                                     <td>${book.author} </td>
-                                                     <td>${book.numPages} </td>
-                                                     <td>${book.read}</td>   
-                                            </tr>`;}); 
-  document.getElementById("library").innerHTML = bookList;
+function displayBook(book) {
+  let parentNode = document.getElementById("input");
+  let row = document.createElement("TR");
+  row.appendChild(document.createElement("TD").innerHTML = `${book.title}`);
+  template.innerHTML =`<tr class='book'>
+  <td>${book.title} </td>
+  <td>${book.author} </td>
+  <td>${book.numPages} </td>
+  <td>${book.read}</td>`;
+  render(parentNode,template);
+}
+
+function displayAllBooks() {
+  myLibrary.forEach( book => {
+    displayBook(book)
+  })
+}
+
+let render = (node,template) => {
+  node.appendChild(template);
 };

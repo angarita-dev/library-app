@@ -20,12 +20,12 @@ function addBookToLibrary() {
 }
 
 let render = () => {
-  let output = ``;
-  myLibrary.forEach(function(book){
-    output += `<p>${book.title}</p>`;
-    output += `<p>${book.title}</p>` ;
-    output += `<p>${book.title}</p>`;
-    output += `<p>${book.title}</p>`;
-  });
-  
+  var bookList = ``;
+  myLibrary.forEach((book) => { bookList +=`<tr class='book'>
+                                                     <td>${book.title} </td>
+                                                     <td>${book.author} </td>
+                                                     <td>${book.numPages} </td>
+                                                     <td>${book.read}</td>   
+                                            </tr>`;}); 
+  document.getElementById("library").innerHTML = bookList;
 };

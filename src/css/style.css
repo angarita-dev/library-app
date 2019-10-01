@@ -2,16 +2,13 @@
  margin:0;
  padding:0;
 }
-.input{
+.input, #library{
     margin:50px auto;
     width: 1000px;
 }
 
-.input th{
+
+.input th, #library td{
     text-align: center;
 }
 
-.display{
-    margin: 50px auto;
-    width: 1000px;
-}

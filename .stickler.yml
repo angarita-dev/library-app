@@ -1,5 +1,8 @@
 linters:
-  csslint: {  }
+  csslint: { 
+    ignore:
+      - 'box-model'
+   }
 files:
   ignore:
     - 'bower_components/*'

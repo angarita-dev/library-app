@@ -23,15 +23,26 @@ function addBookToLibrary() {
 function render(){
   var bookList = "";
   myLibrary.forEach((book,index) => { bookList += `<div class='bookInfo'>
-                                                 <div class='book'>
+                                                 <div class='book' data-index='${index}'>
                                                      <h2>Title: ${book.title} </h2>
                                                      <h5>Author: ${book.author} </h5>
                                                      <h5>Number of pages: ${book.numPages} </h5>
                                                      <h5>Current state: ${book.read} </h5>
-                                                     <button onClick=removeBook(${index}) class="delete-book-btn">Delete</button>
+                                                     <select name="read" class="book-read" onChange="changeRead(${index})">
+                                                      <option value="Read">Read</option>
+                                                      <option value="Currently reading">Currently reading</option>
+                                                      <option value="Not read">Not read</option>
+                                                     </select>
+                                                    <button onClick=removeBook(${index}) class="delete-book-btn">Delete</button>
                                                  </div>
                                                 </div>`;}); 
   document.getElementById("library").innerHTML = bookList;
+}
+
+function changeRead(index){
+  let x = document.getElementsByClassName('book-read')[index];
+  myLibrary[index].read = x.value;
+  render();
 }
 
 function newBook(){

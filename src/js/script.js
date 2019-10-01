@@ -16,4 +16,16 @@ function addBookToLibrary() {
   let newBook = new Book(title, author, numPages, read);
   myLibrary.push(newBook);
   alert(newBook.title + " was added successfully !!!");
+
 }
+
+let render = () => {
+  let output = ``;
+  myLibrary.forEach(function(book){
+    output += `<p>${book.title}</p>`;
+    output += `<p>${book.title}</p>` ;
+    output += `<p>${book.title}</p>`;
+    output += `<p>${book.title}</p>`;
+  });
+  
+};

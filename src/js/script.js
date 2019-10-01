@@ -16,16 +16,22 @@ function addBookToLibrary() {
   let newBook = new Book(title, author, numPages, read);
   myLibrary.push(newBook);
   alert(newBook.title + " was added successfully !!!");
-
+  render();
+  document.getElementsByClassName("input")[0].style.display = "none";
 }
 
-let render = () => {
-  var bookList = ``;
-  myLibrary.forEach((book) => { bookList +=`<tr class='book'>
-                                                     <td>${book.title} </td>
-                                                     <td>${book.author} </td>
-                                                     <td>${book.numPages} </td>
-                                                     <td>${book.read}</td>   
-                                            </tr>`;}); 
+function render(){
+  var bookList = ""; 
+  myLibrary.forEach((book) => { bookList += `<div class='bookInfo'>
+                                                 <div class='book'>
+                                                     <h2>Title: ${book.title} </h2>
+                                                     <h5>Author: ${book.author} </h5>
+                                                     <h5>Year Published: ${book.numPages} </h5>
+                                                 </div>
+                                                </div>`;}); 
   document.getElementById("library").innerHTML = bookList;
-};
+}
+
+function newBook(){
+document.getElementsByClassName("input")[0].style.display = "block";
+}

@@ -15,6 +15,7 @@ function addBookToLibrary() {
 
   let newBook = new Book(title, author, numPages, read);
   myLibrary.push(newBook);
+  displayAllBooks(newBook);
   alert(newBook.title + " was added successfully !!!");
   render();
   document.getElementsByClassName("input")[0].style.display = "none";

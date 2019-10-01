@@ -29,6 +29,7 @@ function render(){
                                                      <h5>Number of pages: ${book.numPages} </h5>
                                                      <h5>Current state: ${book.read} </h5>
                                                      <select name="read" class="book-read" onChange="changeRead(${index})">
+                                                      <option value="none" selected disable hidden>Change read status</option>
                                                       <option value="Read">Read</option>
                                                       <option value="Currently reading">Currently reading</option>
                                                       <option value="Not read">Not read</option>
